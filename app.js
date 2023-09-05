@@ -5,7 +5,7 @@ const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
 const dbpath = path.join(__dirname, "cricketTeam.db");
-const bd = null;
+let bd = null;
 const initializingdbAndServerRes = async () => {
   try {
     db = await open({
@@ -82,7 +82,7 @@ app.put("/players/:playerId/", async (request, response) => {
 app.delete("/players/:playerId/", async (request, response) => {
   const { playerId } = request.params;
   const queryFor = `
-    DELETE FROM cricket_team WHERE player_id=${playerId}`;
+    DELETE FROM cricket_team WHERE player_id=${playerId} `;
   await db.run(queryFor);
   response.send("Player Removed");
 });

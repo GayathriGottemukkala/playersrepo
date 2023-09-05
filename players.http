@@ -22,6 +22,6 @@ Content-Type:application/json
   "role": "All-rounder"
 }
 ###
-DELETE http://localhost:3000/players/3/
+DELETE http://localhost:3000/players/13/
 
 
